@@ -1,0 +1,109 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "ADMC API Document",
+    "version": "v0.0.0"
+  },
+  "host": "localhost:56790",
+  "schemes": [
+    "http"
+  ],
+  "basePath": "/agent",
+  "paths": {
+    "/": {
+      "post": {
+        "summary": "发起任意终端CLI",
+        "description": "",
+        "operationId": "f3595e59-5d66-45c7-9ce4-a23db4a52239",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "required": false,
+            "schema": {
+              "type": "string",
+              "default": "{\"path\":\"/opt/rdmc/bin/md5 -source /opt/rdmc/upload/JOB_000176-deduplication-1684743876956.txt -target /opt/rdmc/tmp/JOB_000176-header-1684743876963.txt -threshold 10\"}"
+            },
+            "in": "body",
+            "name": "body"
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "no response description was provided for this operation"
+          }
+        }
+      }
+    },
+    "/index/status": {
+      "get": {
+        "summary": "rdmc状态查询",
+        "description": "状态查询",
+        "operationId": "f902fe70-c4a5-4cba-8209-48d2a715e320",
+        "consumes": [
+          "application/octet-stream"
+        ],
+        "parameters": [
+          {
+            "required": false,
+            "schema": {
+              "type": "string",
+              "default": ""
+            },
+            "in": "body",
+            "name": "body"
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "no response description was provided for this operation"
+          }
+        }
+      }
+    },
+    "/atomic/check": {
+      "get": {
+        "summary": "检查远程执行脚本",
+        "description": "",
+        "operationId": "8b1697a9-69c5-4c97-a512-633f2a4df142",
+        "parameters": [
+          {
+            "type": "string",
+            "default": "/test/aa.sh",
+            "name": "path",
+            "required": false,
+            "in": "query"
+          },
+          {
+            "type": "string",
+            "default": "1679621753673",
+            "name": "timestamp",
+            "required": false,
+            "in": "query"
+          },
+          {
+            "type": "string",
+            "default": "34275476",
+            "name": "pid",
+            "required": false,
+            "in": "query"
+          },
+          {
+            "type": "string",
+            "default": "10.0.0.78",
+            "name": "host",
+            "required": false,
+            "in": "query"
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "no response description was provided for this operation"
+          }
+        }
+      }
+    }
+  },
+  "tags": []
+}
